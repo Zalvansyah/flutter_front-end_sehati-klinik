@@ -4,12 +4,11 @@ import 'login_screen.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  // ——— dialog konfirmasi log out ———
   void _confirmLogout(BuildContext context) {
     showDialog(
       context: context,
       barrierDismissible: true,
-      barrierColor: Colors.black.withOpacity(0.55), // low opacity background
+      barrierColor: Colors.black.withOpacity(0.55),
       builder: (_) {
         return Dialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -170,7 +169,6 @@ class ProfileScreen extends StatelessWidget {
                     const _MenuTile(icon: Icons.settings_outlined, title: "Settings"),
                     const _MenuTile(icon: Icons.help_outline, title: "Help Center"),
                     const _MenuTile(icon: Icons.apps_outage_outlined, title: "About Application"),
-                    // ——— Log Out: tampilkan modal konfirmasi ———
                     _MenuTile(
                       icon: Icons.logout,
                       title: "Log Out",
