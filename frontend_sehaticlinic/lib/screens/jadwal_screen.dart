@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'form_janji_screen.dart';
 import 'dokter_screen.dart';
 import 'profile_screen.dart';
-// import 'home_screen.dart'; // jika ingin ke Home, bisa pakai pushReplacement ke HomeScreen
 
 class JadwalScreen extends StatelessWidget {
   const JadwalScreen({super.key});
@@ -32,8 +31,6 @@ class JadwalScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF9F2F3),
-
-      // --- FIX: currentIndex = 1 (karena ini halaman Jadwal) ---
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
         selectedItemColor: const Color(0xFF0D99FF),
@@ -41,11 +38,8 @@ class JadwalScreen extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         onTap: (i) {
           if (i == 0) {
-            // Ke Home. Jika sebelumnya dari Home, cukup pop; kalau tidak punya stack, ganti ke pushReplacement ke HomeScreen.
             Navigator.pop(context);
-            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HomeScreen()));
           } else if (i == 1) {
-            // Sudah di Jadwal: tidak perlu apa-apa
             return;
           } else if (i == 2) {
             Navigator.pushReplacement(
