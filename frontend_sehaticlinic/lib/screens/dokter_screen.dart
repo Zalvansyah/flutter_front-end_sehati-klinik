@@ -7,8 +7,8 @@ class DokterScreen extends StatelessWidget {
   const DokterScreen({super.key});
 
   @override
+  // Ini data dummy yaa
   Widget build(BuildContext context) {
-    // ==== DATA DUMMY POLI & DOKTER ====
     final List<_Poli> polis = [
       _Poli(
         nama: "POLI GIGI",
@@ -32,8 +32,6 @@ class DokterScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FA),
-
-      // --- FIX: currentIndex = 2 (halaman Dokter) + pushReplacement ---
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2,
         selectedItemColor: const Color(0xFF0D99FF),
@@ -51,7 +49,6 @@ class DokterScreen extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const JadwalScreen()),
             );
           } else if (i == 2) {
-            // sudah di Dokter
             return;
           } else if (i == 3) {
             Navigator.pushReplacement(
@@ -93,7 +90,7 @@ class DokterScreen extends StatelessWidget {
   }
 }
 
-// ====== WIDGET: Header poli + konten dokter ======
+// widget header poli
 class _PoliTile extends StatefulWidget {
   final _Poli poli;
   const _PoliTile({required this.poli});
@@ -170,7 +167,7 @@ class _PoliTileState extends State<_PoliTile> {
   }
 }
 
-// ====== GRID KARTU DOKTER (2 kolom) ======
+// grid layout
 class _DoctorsGrid extends StatelessWidget {
   final List<_Doctor> doctors;
   const _DoctorsGrid({required this.doctors});
@@ -192,7 +189,7 @@ class _DoctorsGrid extends StatelessWidget {
   }
 }
 
-// ====== Kartu dokter ======
+// card dokter
 class _DoctorCard extends StatelessWidget {
   final _Doctor doctor;
   const _DoctorCard({required this.doctor});
@@ -247,7 +244,7 @@ class _DoctorCard extends StatelessWidget {
   }
 }
 
-// ====== Model sederhana ======
+// modell
 class _Poli {
   final String nama;
   final List<_Doctor>? doctors;
